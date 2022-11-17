@@ -1,4 +1,17 @@
-import { sortNumbers } from './sort-numbers.js';
+// import { sortNumbers } from './sort-numbers.js';
+
+const sortNumbers = (arrOfNumbers = []) => {
+  // create a copy of the argument to avoid side-effects
+  const copiedAndSorted = [...arrOfNumbers];
+
+  // sort the copy according to
+  copiedAndSorted.sort((a, b) => {
+    return a - b;
+  });
+
+  // return the copied & sorted array of numbers
+  return copiedAndSorted;
+};
 
 describe('sortNumbers sorts an array of numbers', () => {
   describe('sorts positive numbers', () => {
