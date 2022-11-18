@@ -1,7 +1,7 @@
 # Deep Flat
 
-The flatten function takes the given array and removes all the nested
-arrays inside of it.
+The flatten function takes the given array and removes all the nested arrays
+inside of it.
 
 ---
 
@@ -14,17 +14,16 @@ I choose to use `.forEach`, `.isArray`,`.concat` and `.push` methods.
 ## Use Cases
 
 ```js
-const data = [1,2, ,4, 5, , 8];
+const data = [1, 2, , 4, 5, , 8];
 
 function flatten(arr) {
   let flatArray = [];
 
   // do some stuff
-  arr.forEach(element => {
-    if(Array.isArray(element)) {
+  arr.forEach((element) => {
+    if (Array.isArray(element)) {
       flatArray = flatArray.concat(flatten(element));
-    }
-    else {
+    } else {
       flatArray.push(element);
     }
   });
