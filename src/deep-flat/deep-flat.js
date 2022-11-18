@@ -1,9 +1,9 @@
-function flatten(arr) {
+function flattenArray(arr) {
   let flatArray = [];
 
   arr.forEach((element) => {
     if (Array.isArray(element)) {
-      flatArray = flatArray.concat(flatten(element));
+      flatArray = flatArray.concat(flattenArray(element));
     } else {
       flatArray.push(element);
     }
@@ -12,4 +12,4 @@ function flatten(arr) {
   return flatArray;
 }
 
-module.exports = flatten;
+module.exports = flattenArray;

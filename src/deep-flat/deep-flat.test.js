@@ -28,9 +28,9 @@ describe('We are reducing the number of dimensions of an array to a lower number
     expect(
       flatten([
         [[1, [1.1]], 2, 3],
-        [4, 5],
+        [4, 6],
       ]),
-    ).toStrictEqual([1, 1.1, 2, 3, 4, 5]);
+    ).toStrictEqual([1, 1.1, 2, 3, 4, 6]);
   });
   test('5', () => {
     expect(flatten([1, 2, , 4, 5, , 8])).toStrictEqual([1, 2, 4, 5, 8]);

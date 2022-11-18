@@ -1,25 +1,30 @@
-# Deep-Flat
+# Deep Flat
 
-Write a function that flattens nested arrays into a single array with no nesting
+The flatten function takes the given array and removes all the nested
+arrays inside of it.
 
 ---
 
-## Docstring
+## Strategy
 
-Here's a starter docstring for your solutions. Feel free to rewrite it if that
-helps you understand:
+I choose to use `.forEach`, `.isArray`,`.concat` and `.push` methods.
+
+---
+
+## Use Cases
 
 ```js
-const data = [1, 2, , 4, 5, , 8];
+const data = [1,2, ,4, 5, , 8];
 
 function flatten(arr) {
   let flatArray = [];
 
   // do some stuff
-  arr.forEach((element) => {
-    if (Array.isArray(element)) {
+  arr.forEach(element => {
+    if(Array.isArray(element)) {
       flatArray = flatArray.concat(flatten(element));
-    } else {
+    }
+    else {
       flatArray.push(element);
     }
   });
@@ -30,6 +35,10 @@ const newArray = flatten(data);
 
 console.log(newArray);
 ```
+
+This function can be used to make more readable code.
+
+---
 
 > Docstring is adapted from
 > [lodash's flattenDeep](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L7330)
