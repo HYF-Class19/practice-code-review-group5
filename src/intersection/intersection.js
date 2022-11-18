@@ -20,7 +20,7 @@
  * // -> [2]
  */
 
-const intersection = (array = [], values = []) => {
+export const intersection = (array, values) => {
   if (Array.isArray(array) === false || Array.isArray(values) === false) {
     throw new TypeError('array and values should be arrays');
   }
@@ -33,5 +33,3 @@ const intersection = (array = [], values = []) => {
   );
   return filteredArr;
 };
-
-module.exports = intersection;

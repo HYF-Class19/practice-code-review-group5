@@ -1,4 +1,4 @@
-const intersection = require('./intersection.js');
+import { intersection } from './intersection.js';
 
 describe('intersection: check the intersection between two arrays, return array of non duplicated intersection values in order to 1st array', () => {
   describe('intersection between two arrays', () => {
