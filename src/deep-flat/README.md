@@ -10,23 +10,26 @@ Here's a starter docstring for your solutions. Feel free to rewrite it if that
 helps you understand:
 
 ```js
-/**
- * Converts a nested array into a single array with no nesting
- *
- * It returns a new array and there are no side-effects
- *
- * @param {Array} [array=[]] - The array to flatten.
- * @returns {Array} Returns the new flattened array.
- * @example
- *
- * deepFlat([1, [2, [3, [4]], 5]]);
- * // -> [1, 2, 3, 4, 5]
- *
- * @example
- *
- * deepFlat(['a', ['b', [['c'], ['d']], 'e']]);
- * // -> ['a', 'b', 'c', 'd', 'e']
- */
+const data = [1,2, ,4, 5, , 8];
+
+function flatten(arr) {
+  let flatArray = [];
+
+  // do some stuff
+  arr.forEach(element => {
+    if(Array.isArray(element)) {
+      flatArray = flatArray.concat(flatten(element));
+    }
+    else {
+      flatArray.push(element);
+    }
+  });
+
+  return flatArray;
+}
+const newArray = flatten(data);
+
+console.log(newArray);
 ```
 
 > Docstring is adapted from
