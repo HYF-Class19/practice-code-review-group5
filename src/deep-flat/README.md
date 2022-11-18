@@ -10,17 +10,16 @@ Here's a starter docstring for your solutions. Feel free to rewrite it if that
 helps you understand:
 
 ```js
-const data = [1,2, ,4, 5, , 8];
+const data = [1, 2, , 4, 5, , 8];
 
 function flatten(arr) {
   let flatArray = [];
 
   // do some stuff
-  arr.forEach(element => {
-    if(Array.isArray(element)) {
+  arr.forEach((element) => {
+    if (Array.isArray(element)) {
       flatArray = flatArray.concat(flatten(element));
-    }
-    else {
+    } else {
       flatArray.push(element);
     }
   });
