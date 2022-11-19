@@ -1,4 +1,4 @@
-# Deep Flat
+# Deep-Flat
 
 The flatten function takes the given array and removes all the nested arrays
 inside of it.
