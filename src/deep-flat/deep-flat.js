@@ -1,7 +1,8 @@
-function flatten(array) {
+function flatten(arr) {
   let flatArray = [];
 
-  array.forEach((element) => {
+  // do some stuff
+  arr.forEach((element) => {
     if (Array.isArray(element)) {
       flatArray = flatArray.concat(flatten(element));
     } else {
