@@ -1,36 +1,44 @@
 # Intersection
 
-Write a function that finds all the values shared between two arrays.
+A function takes in two arrays and return a new array with the values (NOT
+dublicated) exist inside both of them , and that with the order determined in
+the first array.
 
 ---
 
-## Docstring
+## Strategy
 
-Here's a starter docstring for your solutions. Feel free to rewrite it if that
-helps you understand:
+I chose to use built-in array `filter()` and `includes()` methods.
+
+---
+
+## Implementation
+
+- I used `filter()`, `includes()` built-in array to check intersection between
+  two arrays and store in new array `filteredArr`.
+- Then using `indexOf()` method with the `filter()` with an arrow function for
+  removing repeated value.
+
+## Use Cases
 
 ```js
-/**
- * Creates an array of values that are in both the first and the second arrays.
- *
- * Repeated values are not duplicated in the return value, and the order of result values are determined by the first array.
- *
- * **Note:** This function returns a new array, and has no side-effects.
- *
- * @param {Array} [array=[]] - The array to inspect.
- * @param {Array} [values=[]] - The values to include.
- * @returns {Array} Returns the new array of filtered values.
- * @example
- *
- * intersection([2, 1], [2, 3]);
- * // -> [2]
- *
- * @example
- *
- * intersection([2, 1, 2], [2, 3]);
- * // -> [2]
- */
+const intersection = (array = [], values = []) => {
+  let filteredArr = array.filter((value) => values.includes(value));
+  filteredArr = filteredArr.filter(
+    (element, index) => filteredArr.indexOf(element) === index,
+  );
+  return filteredArr;
+};
+
+const arr1 = [1, 3, 1, 4, 2];
+const arr2 = [1, 2, 3];
+console.log(intersection([1, 3, 1, 4, 2], [1, 2, 3])); // [1,3,2];
 ```
 
-> Docstring is adapted from
-> [lodash's intersection](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L7498)
+## Inspiration
+
+[This article](https://www.techiedelight.com/find-intersection-arrays-javascript/)
+gave me the starter code to use `filter` and `include`.
+
+[This article](https://dev.to/soyleninjs/3-ways-to-remove-duplicates-in-an-array-in-javascript-259o)
+inspire me to remove the dublicated values.
