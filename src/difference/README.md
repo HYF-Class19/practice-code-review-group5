@@ -1,35 +1,34 @@
 # Difference
 
-Write a function that removes specific values from an array. The values to
-remove are provided as a second array argument.
+A function that takes in two arrays and returns an array by removing values that
+match any value in a second array.
 
 ---
 
-## Docstring
+## Strategy
 
-Here's a starter docstring for your solutions. Feel free to rewrite it if that
-helps you understand:
+I chose to use built-in array `filter()` and `includes()` methods.
+
+---
+
+## Implementation
+
+- I used `filter()` to create a new array from two the parameters and used
+  `includes()` to check for co-existence, then I reversed by using `!`.
+
+## Use Cases
 
 ```js
-/**
- * Creates an array of values that are in the first array, but not not in the second array.
- *
- * Repeated values are not duplicated in the return value, and the order of result values are determined by the first array.
- *
- * **Note:** This function returns a new array, and has no side-effects.
- *
- * @param {Array} [array=[]] - The array to inspect.
- * @param {Array} [values=[]] - The values to exclude.
- * @returns {Array} Returns the new array of filtered values.
- * @example
- *
- * difference([2, 1], [2, 3]); //  [1]
- *
- * @example
- *
- * difference([1, 2, 1], [2, 3]); //  [1]
- */
+const difference = (array1, array2) => {
+  return array1.filter((x) => !array2.includes(x));
+};
+
+const areDifferent = (Array1, Array2) => {
+  return Array1.filter((x) => !Array2.includes(x));
+};
+console.log(areDifferent([4, 5, 6, 1], [8, 7, 9, 5])); // [4,6,1];
 ```
 
-> Docstring is adapted from
-> [lodash's difference](https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L6947)
+## Inspiration
+
+<https://www.w3schools.com>
