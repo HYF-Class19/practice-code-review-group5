@@ -26,5 +26,5 @@
 // console.log (difference([1, 2, 1], [2, 3]));
 
 export const difference = (array1, array2) => {
-return array1.filter(x => !array2.includes (x));
-}
+  return array1.filter((x) => !array2.includes(x));
+};
